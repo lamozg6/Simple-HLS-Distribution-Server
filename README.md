@@ -72,7 +72,7 @@ $ docker run -p 8000:8000 -t stream-hls
 ## Notes
 
 ### Urls
-- localhost:8000/authenticate/{login}/{password} - Authenticate to start streaming
+- localhost:8000/authenticate/{login}/{password} - Authenticate to start streaming (i.e. localhost:8000/authenticate/admin/123)
 - localhost:8000/frames - Save stream as frames
 - localhost:8000/record - Save stream as video
 
@@ -81,4 +81,5 @@ $ docker run -p 8000:8000 -t stream-hls
 - {repo}/video/generate_pls.sh - example script used to generate sub-playlists and video fragmets using ffmpeg tool. #EXTINF sections of sub-playlists then have to be manualy moved to playlist_live.m3u8.
 
 ### Note
+Register new users in ```MediaController.hpp``` in ```MediaController``` class constructor as done in it as example.
 Authentication done using cookies, but VLC doesn't support it. For playing stream in VLC you need to comment out line ```//#define VLC``` in ```MediaController.hpp```, then authenticate by link localhost:8000/authenticate/admin/123 (i.e. using curl) and after that open network stream in VLC.
