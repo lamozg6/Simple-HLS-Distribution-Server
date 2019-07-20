@@ -1,6 +1,6 @@
 # Simple-HLS-Distribution-Server
 
-HLS-streaming server built using oat++ (AKA oatpp) Async API.
+HLS-streaming server using oat++ (AKA oatpp) Async API.
 
 Server protected by Basic Auth standard and use cookies.
 
