@@ -26,7 +26,6 @@ Server is built using oat++ Async-Api and has following endpoints:
 |- CMakeLists.txt                       // projects CMakeLists.txt
 |- src/                                 // source folder
 |- utility/install-oatpp-modules.sh     // utility script to install required oatpp-modules.
-|
 |- video/                               // media files and playlists here
      |- stream/                         // folder to save HLS encoded to MPG
      |- frames/                         // folder to save HLS frames encoded to JPG
@@ -82,4 +81,4 @@ $ docker run -p 8000:8000 -t stream-hls
 - {repo}/video/generate_pls.sh - example script used to generate sub-playlists and video fragmets using ffmpeg tool. #EXTINF sections of sub-playlists then have to be manualy moved to playlist_live.m3u8.
 
 ### Note
-Authentication done using cookies, but VLC doesn't support it. For playing stream in VLC you need comment out line ```//#define VLC``` in ```MediaController.hpp```, then authenticate by link localhost:8000/authenticate/admin/123 (i.e. using curl) and after that open network stream.
+Authentication done using cookies, but VLC doesn't support it. For playing stream in VLC you need comment out line ```//#define VLC``` in ```MediaController.hpp```, then authenticate by link localhost:8000/authenticate/admin/123 (i.e. using curl) and after that open network stream in VLC.
