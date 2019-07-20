@@ -253,6 +253,7 @@ ENDPOINT_ASYNC("GET", "/*", Static) {
 
     Action act() override {
       auto filename = request->getPathTail();
+      OATPP_ASSERT_HTTP(filename, Status::CODE_400, "Filename is empty");
       std::system("pwd > text.txt");
       std::stringstream ss;
       ss << std::ifstream("text.txt").rdbuf();
@@ -274,8 +275,6 @@ ENDPOINT_ASYNC("GET", "/*", Static) {
           command = "ffmpeg -i " + name + " -vf fps=1 " + path + "frames/" + f_name + "_thumb%03d.jpg";
       }
       std::system(command.c_str());
-
-      OATPP_ASSERT_HTTP(filename, Status::CODE_400, "Filename is empty");
 
       auto range = request->getHeader(Header::RANGE);
 
