@@ -82,4 +82,5 @@ $ docker run -p 8000:8000 -t stream-hls
 
 ### Note
 Register new users in ```MediaController.hpp``` in ```MediaController``` class constructor as done in it as example.
+
 Authentication done using cookies, but VLC doesn't support it. For playing stream in VLC you need to comment out line ```//#define VLC``` in ```MediaController.hpp```, then authenticate by link localhost:8000/authenticate/admin/123 (i.e. using curl) and after that open network stream in VLC.
