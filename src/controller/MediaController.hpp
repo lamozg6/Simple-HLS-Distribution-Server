@@ -1,7 +1,7 @@
 #ifndef MediaController_hpp
 #define MediaController_hpp
 
-#define VLC
+//#define VLC
 
 #include "../hls/Playlist.hpp"
 #include "../Utils.hpp"
